@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="${daoPackage}.${tableName}Mapper" >
+	<resultMap id="${tableName}Map" type="${tableName}DO">
+	#foreach($xmlBo in ${list})
+    <result property="$!{xmlBo.propertyName}" column="$!{xmlBo.columnName}"/>
+    #end
+</resultMap>
+   	
+   	<!-- 所有查询字段 -->
+   	<sql id="allSelectionColumn">
+		#foreach($xmlBo in ${list})#if(($velocityCount)!=$!{list.size()})
+$!{xmlBo.columnName},
+        #else
+$!{xmlBo.columnName}
+	#end#end</sql>
+   	
+   	<!-- 根据ID查询实体数据 -->
+    <select id="selectById" parameterType="${idType}" resultMap="${tableName}Map">
+        SELECT <include refid="allSelectionColumn"/> FROM ${table_name} WHERE id = #{value} AND isDeleted = 0 LIMIT 1
+    </select>
+
+    <!--多条件查询表信息(分页) -->
+    <select id="selectListByParams" parameterType="${tableName}DO" resultMap="${tableName}Map">
+        SELECT <include refid="allSelectionColumn"/> FROM ${table_name} WHERE isDeleted = 0
+    </select>
+    <select id="selectCountByParams" parameterType="${tableName}DO" resultType="int">
+        SELECT COUNT(id) FROM ${table_name} WHERE isDeleted = 0
+    </select>
+
+    <!-- 添加数据 -->
+    <insert id="insert" parameterType="${tableName}DO">
+#if(${idType} != 'String')
+        <selectKey resultType="${idType}" order="AFTER" keyProperty="id">
+        SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+#end
+        INSERT INTO ${table_name}(
+        #foreach($xmlBo in ${list})
+#if(($velocityCount)!=$!{list.size()})$!xmlBo.columnName,
+        #else
+$!xmlBo.columnName
+        #end#end
+)VALUES(
+        #foreach($xmlBo in ${list})#if(($velocityCount)!=$!{list.size()})
+#{$!xmlBo.propertyName},
+        #else
+#{$!xmlBo.propertyName}#end#end)
+    </insert>
+
+    <!-- 根据ID更新信息-->
+    <update id="updateById" parameterType="${tableName}DO">
+        UPDATE ${table_name} SET
+        #foreach($xmlBo in ${list})#if($!xmlBo.columnName != "id" && $!xmlBo.columnName != "createDate"&& $!xmlBo.columnName != "versionLock"&& $!xmlBo.columnName != "isDeleted")#if($!xmlBo.columnName == "updateTime")
+versionLock = versionLock + 1,
+        $!xmlBo.columnName = NOW()
+        #else<if test="$!{xmlBo.propertyName} != null #if($!{xmlBo.type} == "STRING")and $!{xmlBo.propertyName} != ''#end">
+            $!xmlBo.columnName = #{$!{xmlBo.propertyName}},
+        </if>
+        #end#end#end
+WHERE id = #{id} AND versionLock = #{versionLock}
+    </update>
+
+    <!-- 根据ID更新删除状态-->
+    <update id="updateIsDeleteById" parameterType="${tableName}DO">
+        UPDATE ${table_name} SET isDeleted = #{isDeleted}, versionLock = versionLock + 1
+        WHERE id = #{id} AND isDeleted = 0 AND versionLock = #{versionLock}
+    </update>
+
+    <!-- 根据ID删除数据-->
+    <delete id="deleteById" parameterType="${idType}">
+        DELETE FROM ${table_name} WHERE id = #{value}
+    </delete>
+</mapper>

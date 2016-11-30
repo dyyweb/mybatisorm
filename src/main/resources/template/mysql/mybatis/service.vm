@@ -1,0 +1,52 @@
+package ${servicePackage};
+
+import ${pojoPackage}.${bigDoName};
+import org.springframework.stereotype.Service;
+import com.txframework.core.jdbc.PageRequest;
+
+/**
+* author: wsh
+* JDK-version:  JDK1.8
+* comments:  ${headName}服务层
+* since Date： ${date}
+*/
+@Service
+public interface ${bigServiceName} {
+
+	/**
+	* 多条件查询(分页)
+	* @param ${minDoName} ${bigDoName}
+	* @param pageRequest PageRequest<${bigDoName}>
+	* @return PageRequest<${bigDoName}>
+    */
+    public PageRequest<${bigDoName}> query${bigDoName}ListForPage(${bigDoName} ${minDoName}, PageRequest<${bigDoName}> pageRequest) throws Exception;
+
+    /**
+    * 根据用户ID查询
+    * @param id ${idType}
+    * @return ${bigDoName}
+    */
+    public ${bigDoName} get${bigDoName}ById(${idType} id) throws Exception;
+
+    /**
+    * 添加
+    * @param ${minDoName} ${bigDoName}
+    * @return boolean
+    */
+    public boolean add${bigDoName}(${bigDoName} ${minDoName}) throws Exception;
+
+    /**
+    * 修改
+    * @param ${minDoName} ${bigDoName}
+	* @return boolean
+    */
+    public boolean modify${bigDoName}(${bigDoName} ${minDoName}) throws Exception;
+
+    /**
+    * 删除(逻辑删除)
+    * @param id ${idType}
+    * @return boolean
+    * @throws Exception
+    */
+    public boolean del${bigDoName}(${idType} id) throws Exception;
+}
