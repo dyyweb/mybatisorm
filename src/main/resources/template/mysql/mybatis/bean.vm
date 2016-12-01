@@ -8,7 +8,7 @@ import java.util.Date;
 * comments:  ${headName}模型
 * since Date： ${date}
 */
-public class ${head}DO{
+public class ${head}DO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 #foreach($colum in $columList)
