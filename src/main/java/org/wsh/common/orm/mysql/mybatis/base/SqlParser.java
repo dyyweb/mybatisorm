@@ -1,6 +1,6 @@
-package org.wsh.common.orm.mysql.mybatis.base;
+package org.dy.common.orm.mysql.mybatis.base;
 
-import org.wsh.common.orm.mysql.mybatis.bean.TableWapper;
+import org.dy.common.orm.mysql.mybatis.bean.TableWapper;
 
 public interface SqlParser {
 

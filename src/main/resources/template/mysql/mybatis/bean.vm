@@ -3,7 +3,7 @@ package ${packageName};
 import java.util.Date;
 
 /**
-* author: wsh
+* author: dy
 * JDK-version:  JDK1.8
 * comments:  ${headName}模型
 * since Date： ${date}

@@ -1,18 +1,18 @@
-package org.wsh.common.orm.mysql.mybatis.build;
+package org.dy.common.orm.mysql.mybatis.build;
 
-import org.wsh.common.orm.mysql.mybatis.base.AbstractBuildFactory;
-import org.wsh.common.orm.mysql.mybatis.bean.Column;
-import org.wsh.common.orm.mysql.mybatis.bean.TableWapper;
-import org.wsh.common.orm.mysql.mybatis.bean.XmlBean;
-import org.wsh.common.orm.mysql.mybatis.enums.OutPathKey;
-import org.wsh.common.orm.mysql.mybatis.util.Util;
+import org.dy.common.orm.mysql.mybatis.base.AbstractBuildFactory;
+import org.dy.common.orm.mysql.mybatis.bean.Column;
+import org.dy.common.orm.mysql.mybatis.bean.TableWapper;
+import org.dy.common.orm.mysql.mybatis.bean.XmlBean;
+import org.dy.common.orm.mysql.mybatis.enums.OutPathKey;
+import org.dy.common.orm.mysql.mybatis.util.Util;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * author: wsh
+ * author: dy
  * JDK-version:  JDK1.8
  * comments:  构件Mappering
  * since Date： 2016/11/16 15:23

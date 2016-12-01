@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
-* author: wsh
+* author: dy
 * JDK-version:  JDK1.8
 * comments:  ${headName}持久层
 * since Date： ${date}
