@@ -20,15 +20,15 @@ $!{xmlBo.columnName}
    	
    	<!-- 根据ID查询实体数据 -->
     <select id="selectById" parameterType="${idType}" resultMap="${tableName}Map">
-        SELECT <include refid="allSelectionColumn"/> FROM ${table_name} WHERE id = #{value} AND isDeleted = 0 LIMIT 1
+        SELECT <include refid="allSelectionColumn"/> FROM ${table_name} WHERE id = #{value} LIMIT 1
     </select>
 
     <!--多条件查询表信息(分页) -->
     <select id="selectListByParams" parameterType="${tableName}DO" resultMap="${tableName}Map">
-        SELECT <include refid="allSelectionColumn"/> FROM ${table_name} WHERE isDeleted = 0
+        SELECT <include refid="allSelectionColumn"/> FROM ${table_name}
     </select>
     <select id="selectCountByParams" parameterType="${tableName}DO" resultType="int">
-        SELECT COUNT(id) FROM ${table_name} WHERE isDeleted = 0
+        SELECT COUNT(id) FROM ${table_name}
     </select>
 
     <!-- 添加数据 -->
@@ -54,20 +54,14 @@ $!xmlBo.columnName
     <!-- 根据ID更新信息-->
     <update id="updateById" parameterType="${tableName}DO">
         UPDATE ${table_name} SET
-        #foreach($xmlBo in ${list})#if($!xmlBo.columnName != "id" && $!xmlBo.columnName != "createDate"&& $!xmlBo.columnName != "versionLock"&& $!xmlBo.columnName != "isDeleted")#if($!xmlBo.columnName == "updateTime")
-versionLock = versionLock + 1,
-        $!xmlBo.columnName = NOW()
+        #foreach($xmlBo in ${list})#if(($velocityCount)==$!{list.size()})<if test="$!{xmlBo.propertyName} != null #if($!{xmlBo.type} == "STRING")and $!{xmlBo.propertyName} != ''#end">
+            $!xmlBo.columnName = #{$!{xmlBo.propertyName}}
+        </if>
         #else<if test="$!{xmlBo.propertyName} != null #if($!{xmlBo.type} == "STRING")and $!{xmlBo.propertyName} != ''#end">
             $!xmlBo.columnName = #{$!{xmlBo.propertyName}},
         </if>
-        #end#end#end
-WHERE id = #{id} AND versionLock = #{versionLock}
-    </update>
-
-    <!-- 根据ID更新删除状态-->
-    <update id="updateIsDeleteById" parameterType="${tableName}DO">
-        UPDATE ${table_name} SET isDeleted = #{isDeleted}, versionLock = versionLock + 1
-        WHERE id = #{id} AND isDeleted = 0 AND versionLock = #{versionLock}
+        #end#end
+        WHERE id = #{id}
     </update>
 
     <!-- 根据ID删除数据-->

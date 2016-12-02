@@ -1,19 +1,19 @@
-package org.dy.common.orm.mysql.mybatis.build;
+package org.wsh.common.orm.mysql.mybatis.build;
 
-import org.dy.common.orm.mysql.mybatis.base.AbstractBuildFactory;
-import org.dy.common.orm.mysql.mybatis.bean.BigAndSmall;
-import org.dy.common.orm.mysql.mybatis.bean.Column;
-import org.dy.common.orm.mysql.mybatis.bean.Table;
-import org.dy.common.orm.mysql.mybatis.bean.TableWapper;
-import org.dy.common.orm.mysql.mybatis.enums.OutPathKey;
-import org.dy.common.orm.mysql.mybatis.util.Util;
+import org.wsh.common.orm.mysql.mybatis.base.AbstractBuildFactory;
+import org.wsh.common.orm.mysql.mybatis.bean.BigAndSmall;
+import org.wsh.common.orm.mysql.mybatis.bean.Column;
+import org.wsh.common.orm.mysql.mybatis.bean.Table;
+import org.wsh.common.orm.mysql.mybatis.bean.TableWapper;
+import org.wsh.common.orm.mysql.mybatis.enums.OutPathKey;
+import org.wsh.common.orm.mysql.mybatis.util.Util;
 
 import java.util.*;
 
-import static org.dy.common.orm.mysql.mybatis.util.Util.parseDate;
+import static org.wsh.common.orm.mysql.mybatis.util.Util.parseDate;
 
 /**
- * author: dy
+ * author: wsh
  * JDK-version:  JDK1.8
  * comments:  构建模型
  * since Date： 2016/11/16 15:22
@@ -48,7 +48,8 @@ public class BuildBean extends AbstractBuildFactory {
 				type = "Date";
 			} else if (type.equalsIgnoreCase("VARCHAR") || type.equalsIgnoreCase("CHAR")
 					|| type.equalsIgnoreCase("BLOB") || type.equalsIgnoreCase("TEXT")
-					|| type.equalsIgnoreCase("LONGBLOB") || type.equalsIgnoreCase("LONGTEXT")) {
+					|| type.equalsIgnoreCase("LONGBLOB") || type.equalsIgnoreCase("LONGTEXT")
+					|| type.equalsIgnoreCase("MEDIUMTEXT")) {
 				type = "String";
 			} else if (type.equalsIgnoreCase("ENUM")) {
 				type = Util.getUpperHumpName(co.getName());

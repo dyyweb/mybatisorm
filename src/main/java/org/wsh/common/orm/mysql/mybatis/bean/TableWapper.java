@@ -1,8 +1,8 @@
-package org.dy.common.orm.mysql.mybatis.bean;
+package org.wsh.common.orm.mysql.mybatis.bean;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.dy.common.orm.mysql.mybatis.enums.OutPathKey;
+import org.wsh.common.orm.mysql.mybatis.enums.OutPathKey;
 
 import java.util.Map;
 

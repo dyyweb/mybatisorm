@@ -1,9 +1,10 @@
 package ${packageName};
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
-* author: dy
+* author: wsh
 * JDK-version:  JDK1.8
 * comments:  ${headName}模型
 * since Date： ${date}

@@ -1,4 +1,4 @@
-package org.dy.common.orm.mysql.mybatis.bean;
+package org.wsh.common.orm.mysql.mybatis.bean;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 数据库表信息
- * author: dy
+ * author: wsh
  * JDK-version:  JDK1.8
  * comments:  对此类的描述，可以引用系统设计中的描述
  * since Date： 2016/11/16 14:54

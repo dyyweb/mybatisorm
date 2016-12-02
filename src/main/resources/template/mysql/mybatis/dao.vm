@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
-* author: dy
+* author: wsh
 * JDK-version:  JDK1.8
 * comments:  ${headName}持久层
 * since Date： ${date}
@@ -43,13 +43,6 @@ public interface ${bigDaoName} {
 	* @return int
 	*/
 	int updateById(${bigDoName} ${minDoName});
-
-	/**
-	* 根据ID更新删除状态
-	* @param ${minDoName} ${bigDoName}
-	* @return int
-	*/
-	int updateIsDeleteById(${bigDoName} ${minDoName});
 
 	/**
 	 * 根据ID删除信息

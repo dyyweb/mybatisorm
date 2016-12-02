@@ -1,10 +1,10 @@
-package org.dy.common.orm.mysql.mybatis.bean;
+package org.wsh.common.orm.mysql.mybatis.bean;
 
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * author: dy
+ * author: wsh
  * JDK-version:  JDK1.8
  * comments:  字段
  * since Date： 2016/11/16 14:53

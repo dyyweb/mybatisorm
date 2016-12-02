@@ -1,9 +1,9 @@
-package org.dy.common.orm.mysql.mybatis;
+package org.wsh.common.orm.mysql.mybatis;
 
-import org.dy.common.orm.mysql.mybatis.base.BuildFactory;
-import org.dy.common.orm.mysql.mybatis.bean.TableWapper;
-import org.dy.common.orm.mysql.mybatis.build.*;
-import org.dy.common.orm.mysql.mybatis.enums.OutPathKey;
+import org.wsh.common.orm.mysql.mybatis.base.BuildFactory;
+import org.wsh.common.orm.mysql.mybatis.bean.TableWapper;
+import org.wsh.common.orm.mysql.mybatis.build.*;
+import org.wsh.common.orm.mysql.mybatis.enums.OutPathKey;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
