@@ -1,7 +1,7 @@
-package org.wsh.common.orm.mysql.mybatis.enums;
+package org.dy.common.orm.mysql.mybatis.enums;
 
 /**
- * author: wsh
+ * author: dy
  * JDK-version:  JDK1.8
  * comments:  输出路径键
  * since Date： 2016-11-16 15:50

@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
-* author: wsh
+* author: dy
 * JDK-version:  JDK1.8
 * comments:  ${headName}服务实现层
 * since Date： ${date}
@@ -54,22 +54,24 @@ public class ${bigServiceImplName} extends BaseServiceImpl implements ${bigServi
     }
 
     /**
-    * 根据ID查询
+    * 根据参数查询
     * @param id Long
     * @return ResultModel
     */
     @Override
-    public ResultModel<${bigDoName}> get${bigDoName}ById(Long id){
+    public ResultModel<${bigDoName}> selectByParams(${bigDoName} ${minDoName}){
         try {
             Assert.isTrue(id != null,"查询Id不能为空!");
-            ${bigDoName} ${minDoName} = ${minDaoName}.selectById(id);
-
-            return new ResultModel<>(${minDoName});
+            ${bigDoName} ${minDoName} = ${minDaoName}.selectByParams(${minDoName});
+            if (orders == null)
+                return new ResultModel<>(false, "查询结果为空", ErrorCode.ITEM_IS_NULL);
+            else
+                return new ResultModel<>(${minDoName});
         } catch (IllegalArgumentException e) {
             logger.error("查询${bigDoName}传入Id为空!",e);
             return new ResultModel<>(false, ErrorCode.NOT_FIND_PARAM,e.getMessage());
         } catch (Exception e) {
-            logger.error("根据ID=>[" + id + "]查询${bigDoName}信息异常!",e);
+            logger.error(e.getMessage()),e);
             return new ResultModel<>(false,ErrorCode.GET_EXCEPTION,"查询异常!");
         }
     }

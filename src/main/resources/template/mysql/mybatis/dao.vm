@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
-* author: wsh
+* author: dy
 * JDK-version:  JDK1.8
 * comments:  ${headName}持久层
 * since Date： ${date}
@@ -15,11 +15,11 @@ import java.util.List;
 public interface ${bigDaoName} {
 
 	/**
-	 * 根据ID查询表数据
+	 * 根据参数查询表数据
 	 * @param id ${idType}
 	 * @return ${bigDoName}
 	 */
-	${bigDoName} selectById(${idType} id);
+	${bigDoName} selectByParams(${bigDoName} ${minDoName});
 
 	/**
 	* 多条件查询表信息(分页)

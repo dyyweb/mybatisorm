@@ -1,4 +1,4 @@
-package org.wsh.common.orm.mysql.mybatis.util;
+package org.dy.common.orm.mysql.mybatis.util;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;

@@ -1,19 +1,19 @@
-package org.wsh.common.orm.mysql.mybatis.build;
+package org.dy.common.orm.mysql.mybatis.build;
 
-import org.wsh.common.orm.mysql.mybatis.base.AbstractBuildFactory;
-import org.wsh.common.orm.mysql.mybatis.bean.BigAndSmall;
-import org.wsh.common.orm.mysql.mybatis.bean.Column;
-import org.wsh.common.orm.mysql.mybatis.bean.Table;
-import org.wsh.common.orm.mysql.mybatis.bean.TableWapper;
-import org.wsh.common.orm.mysql.mybatis.enums.OutPathKey;
-import org.wsh.common.orm.mysql.mybatis.util.Util;
+import org.dy.common.orm.mysql.mybatis.base.AbstractBuildFactory;
+import org.dy.common.orm.mysql.mybatis.bean.BigAndSmall;
+import org.dy.common.orm.mysql.mybatis.bean.Column;
+import org.dy.common.orm.mysql.mybatis.bean.Table;
+import org.dy.common.orm.mysql.mybatis.bean.TableWapper;
+import org.dy.common.orm.mysql.mybatis.enums.OutPathKey;
+import org.dy.common.orm.mysql.mybatis.util.Util;
 
 import java.util.*;
 
-import static org.wsh.common.orm.mysql.mybatis.util.Util.parseDate;
+import static org.dy.common.orm.mysql.mybatis.util.Util.parseDate;
 
 /**
- * author: wsh
+ * author: dy
  * JDK-version:  JDK1.8
  * comments:  构建模型
  * since Date： 2016/11/16 15:22

@@ -19,7 +19,7 @@ $!{xmlBo.columnName}
 	#end#end</sql>
    	
    	<!-- 根据ID查询实体数据 -->
-    <select id="selectById" parameterType="${idType}" resultMap="${tableName}Map">
+    <select id="selectByParams" parameterType="${idType}" resultMap="${tableName}Map">
         SELECT <include refid="allSelectionColumn"/> FROM ${table_name} WHERE id = #{value} LIMIT 1
     </select>
 

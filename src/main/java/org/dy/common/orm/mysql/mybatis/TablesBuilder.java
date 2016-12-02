@@ -1,11 +1,11 @@
-package org.wsh.common.orm.mysql.mybatis;
+package org.dy.common.orm.mysql.mybatis;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.wsh.common.orm.mysql.mybatis.bean.Column;
-import org.wsh.common.orm.mysql.mybatis.bean.Table;
-import org.wsh.common.orm.mysql.mybatis.bean.TableWapper;
-import org.wsh.common.orm.mysql.mybatis.enums.OutPathKey;
+import org.dy.common.orm.mysql.mybatis.bean.Column;
+import org.dy.common.orm.mysql.mybatis.bean.Table;
+import org.dy.common.orm.mysql.mybatis.bean.TableWapper;
+import org.dy.common.orm.mysql.mybatis.enums.OutPathKey;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;

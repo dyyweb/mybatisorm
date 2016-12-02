@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.txframework.core.jdbc.PageRequest;
 
 /**
-* author: wsh
+* author: dy
 * JDK-version:  JDK1.8
 * comments:  ${headName}服务层
 * since Date： ${date}
@@ -23,11 +23,11 @@ public interface ${bigServiceName} {
     public ResultModel<PageRequest<${bigDoName}>> query${bigDoName}ListForPage(${bigDoName} ${minDoName}, PageRequest<${bigDoName}> pageRequest) throws Exception;
 
     /**
-    * 根据用户ID查询
+    * 根据参数查询
     * @param id ${idType}
     * @return ResultModel<${bigDoName}>
     */
-    public ResultModel<${bigDoName}> get${bigDoName}ById(${idType} id);
+    public ResultModel<${bigDoName}> selectByParams(${bigDoName} ${minDoName});
 
     /**
     * 添加
