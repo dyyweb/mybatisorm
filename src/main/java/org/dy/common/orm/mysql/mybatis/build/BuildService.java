@@ -77,4 +77,8 @@ public class BuildService extends AbstractBuildFactory{
         map.put("date", parseDate(new Date(),"yyyy-MM-dd HH:mm:ss"));
         Util.writeCode("service", map,outPath+bigServiceName+".java/");
     }
+    @Override
+    public void buildTable() {
+
+    }
 }

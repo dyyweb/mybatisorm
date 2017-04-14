@@ -14,6 +14,10 @@ public class TableWapper {
 
 	@Setter
 	@Getter
+	private String basePackage;
+
+	@Setter
+	@Getter
 	private String pojoPackage;
 
 	@Setter

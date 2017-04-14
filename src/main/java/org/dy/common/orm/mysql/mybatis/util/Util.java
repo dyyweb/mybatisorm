@@ -49,7 +49,8 @@ public class Util {
 		StringBuilder humpName = new StringBuilder(name.length());
 		for (int i = 0; i < ns.length; i++) {
 			if (i == 0) {
-				humpName.append(ns[i]);
+				humpName.append(ns[i].substring(0, 1).toLowerCase());
+				humpName.append(ns[i].substring(1));
 			} else {
 				humpName.append(ns[i].substring(0, 1).toUpperCase());
 				humpName.append(ns[i].substring(1));

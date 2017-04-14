@@ -11,11 +11,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author dengyang
+ */
 public class Mybatisorm {
 
 	private static final List<BuildFactory> BUILD_LIST = new ArrayList<BuildFactory>();
 
-	private static final String PROJECT_PATH = "D:\\code_template";
+	public static final String PROJECT_PATH = "D:\\code_template";
 
 	static {
 		BUILD_LIST.add(new BuildDao());
@@ -32,6 +35,7 @@ public class Mybatisorm {
 				b.buildTable(t);
 			}
 		}
+		new BuildBase().buildTable();
 	}
 
 	private static List<TableWapper> getTables() throws Exception {
@@ -41,6 +45,7 @@ public class Mybatisorm {
 		builder.setUrl("jdbc:mysql://10.7.13.48:8066/account?useUnicode=true&amp;characterEncoding=utf-8");//数据库链接
 		builder.setName("admin");//数据库用户名
 		builder.setPwd("9MeRMf7b15SvsjLpQFtB");//数据库密码
+		TablesBuilder.BASEPACKAGE = "com.dy.base";//base包地址
 		builder.setPojoPackage("com.dy.model");//pojo包地址
 		builder.setDaoPackage("com.dy.mapper");//dao包地址
 		builder.setServicePackage("com.dy.service");
@@ -48,6 +53,8 @@ public class Mybatisorm {
 		File path_file = new File(PROJECT_PATH);
 		if (!path_file.isDirectory()){
 			path_file.mkdir();
+			File base = new File(path_file, "base");
+			base.mkdir();
 			File model = new File(path_file, "model");
 			model.mkdir();
 			File mapper = new File(path_file, "mapper");
@@ -58,6 +65,7 @@ public class Mybatisorm {
 			impl.mkdir();
 		}
 		outPathMap.put(OutPathKey.DEFULT,PROJECT_PATH);
+		outPathMap.put(OutPathKey.BASE,PROJECT_PATH + "\\base\\");
 		outPathMap.put(OutPathKey.DO,PROJECT_PATH + "\\model\\");
 		outPathMap.put(OutPathKey.DAO,PROJECT_PATH + "\\mapper\\");
 		outPathMap.put(OutPathKey.XML,PROJECT_PATH + "\\mapper\\");

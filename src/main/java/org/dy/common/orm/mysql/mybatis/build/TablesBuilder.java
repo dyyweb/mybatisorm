@@ -18,6 +18,7 @@ import java.util.Map;
 public class TablesBuilder {
 
 	private static final String MYSQL_CLASS = "com.mysql.jdbc.Driver";
+	public static String BASEPACKAGE;
 	
 	//数据库驱动
 	@Setter
@@ -38,6 +39,7 @@ public class TablesBuilder {
 	@Setter
 	@Getter
 	private String pwd;
+
 
 	//pojo包地址
 	@Setter

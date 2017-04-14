@@ -111,4 +111,8 @@ public class BuildXml extends AbstractBuildFactory {
 			e.printStackTrace(); // To change body of catch statement use File |
 		}
 	}
+	@Override
+	public void buildTable() {
+
+	}
 }

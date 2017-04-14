@@ -24,10 +24,9 @@ public interface ${bigDaoName} {
 	/**
 	* 多条件查询表信息(分页)
 	* @param ${minDoName} ${bigDoName}
-	* @param pageRequest PageRequest<${bigDoName}>
 	* @return List<${bigDoName}>
 	*/
-	List<${bigDoName}> selectListByParams(${bigDoName} ${minDoName}, PageRequest<${bigDoName}> pageRequest);
+	List<${bigDoName}> selectListByParams(${bigDoName} ${minDoName});
 	int selectCountByParams(${bigDoName} ${minDoName});
 	
 	/**

@@ -79,4 +79,8 @@ public class BuildDao extends AbstractBuildFactory {
 		map.put("tableName", new String(letters));
 		Util.writeCode("dao", map,outPath+bigDaoName+".java/");
 	}
+	@Override
+	public void buildTable() {
+
+	}
 }

@@ -11,4 +11,5 @@ import org.dy.common.orm.mysql.mybatis.bean.TableWapper;
 public interface BuildFactory {
 
     public void buildTable(TableWapper tableWapper);
+    public void buildTable();
 }

@@ -29,11 +29,11 @@ public class ${bigServiceImplName} extends BaseServiceImpl implements ${bigServi
     /**
     * 多条件查询(分页)
     * @param ${minDoName} ${bigDoName}
-    * @param pageRequest PageRequest<${bigDoName}>
+    * @param pageRequest ${bigDoName}>
     * @return ResultModel
     */
     @Override
-    ResultModel<PageRequest<${bigDoName}>> query${bigDoName}ListForPage(${bigDoName} ${minDoName}, PageRequest<${bigDoName}> pageRequest) throws Exception{
+    ResultModel<${bigDoName}> query${bigDoName}ListForPage(${bigDoName} ${minDoName}) throws Exception{
         try {
 
             Assert.notNull(pageRequest, "分页参数不能为空");

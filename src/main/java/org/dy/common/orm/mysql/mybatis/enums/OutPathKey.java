@@ -7,6 +7,7 @@ package org.dy.common.orm.mysql.mybatis.enums;
  * since Date： 2016-03-16 15:50
  */
 public enum OutPathKey {
+    BASE,
 
     DO,
 

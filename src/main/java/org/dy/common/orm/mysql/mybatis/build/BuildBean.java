@@ -97,4 +97,9 @@ public class BuildBean extends AbstractBuildFactory {
 
 		Util.writeCode("bean", map, outPath + doName + "DO.java/");
 	}
+
+	@Override
+	public void buildTable() {
+
+	}
 }
