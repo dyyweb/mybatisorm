@@ -34,6 +34,9 @@ $!{xmlBo.columnName}
                     AND $!xmlBo.columnName = #{$!{xmlBo.propertyName}}
                 </if>
                 #end#end
+                <if test="startRow != null and rowNum!=null">
+                    limit ${startRow},${rowNum}
+                </if
     </select>
     <select id="selectCountByParams" parameterType="${tableName}DO" resultType="int">
         SELECT COUNT(id) FROM ${table_name} WHERE 1=1
