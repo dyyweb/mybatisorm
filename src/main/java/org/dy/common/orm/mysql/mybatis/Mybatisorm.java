@@ -13,7 +13,7 @@ public class Mybatisorm {
 
 	private static final List<BuildFactory> BUILD_LIST = new ArrayList<BuildFactory>();
 
-	private static final String PROJECT_PATH = "F:\\TableModel";
+	private static final String PROJECT_PATH = "D:\\code_template";
 
 	static {
 		BUILD_LIST.add(new BuildDao());
@@ -36,14 +36,14 @@ public class Mybatisorm {
 		TablesBuilder builder = new TablesBuilder();
 		Map<OutPathKey,String> outPathMap = new HashMap<OutPathKey,String>();
 		builder.setJdbcClass("com.mysql.jdbc.Driver");//驱动
-		builder.setUrl("jdbc:mysql://172.30.248.21:3306/score_mall");//数据库链接
-		builder.setName("dev");//数据库用户名
-		builder.setPwd("DEVfunds@123");//数据库密码
-		builder.setPojoPackage("com.trc.mall.model");//pojo包地址
-		builder.setDaoPackage("com.trc.mall.mapper");//dao包地址
-		builder.setServicePackage("com.trc.mall.service");
-		builder.setServiceImplPackage("com.trc.mall.service.impl");
-		outPathMap.put(OutPathKey.DEFULT,"F:/TableModel/");
+		builder.setUrl("jdbc:mysql://10.7.13.48:8066/account?useUnicode=true&amp;characterEncoding=utf-8");//数据库链接
+		builder.setName("admin");//数据库用户名
+		builder.setPwd("9MeRMf7b15SvsjLpQFtB");//数据库密码
+		builder.setPojoPackage("com.dy.model");//pojo包地址
+		builder.setDaoPackage("com.dy.mapper");//dao包地址
+		builder.setServicePackage("com.dy.service");
+		builder.setServiceImplPackage("com.dy.service.impl");
+		outPathMap.put(OutPathKey.DEFULT,PROJECT_PATH);
 		outPathMap.put(OutPathKey.DO,PROJECT_PATH + "\\model\\");
 		outPathMap.put(OutPathKey.DAO,PROJECT_PATH + "\\mapper\\");
 		outPathMap.put(OutPathKey.XML,PROJECT_PATH + "\\mapper\\");

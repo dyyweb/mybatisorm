@@ -4,14 +4,13 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
-* author: dy
-* JDK-version:  JDK1.8
-* comments:  ${headName}模型
-* since Date： ${date}
+* ${headName}模型
+* @author: dy
+* JDK-version:  JDK1.7
+* @since  ${date}
 */
 public class ${head}DO implements Serializable{
 
-	private static final long serialVersionUID = 1L;
 #foreach($colum in $columList)
 
 	/**
