@@ -54,7 +54,7 @@ public class BuildBean extends AbstractBuildFactory {
 			} else if (type.equalsIgnoreCase("ENUM")) {
 				type = Util.getUpperHumpName(co.getName());
 			} else if (type.equalsIgnoreCase("INT") || type.equalsIgnoreCase("TINYINT")) {
-				type = "int";
+				type = "Integer";
 			} else if (type.equalsIgnoreCase("BIGINT")) {
 				type = "Long";
 			} else if (type.equalsIgnoreCase("DOUBLE")) {
@@ -67,6 +67,8 @@ public class BuildBean extends AbstractBuildFactory {
 				type = "BigDecimal";
 			}else if (type.equalsIgnoreCase("BIT")) {
 				type = "boolean";
+			}else{
+				type = "Undefined";
 			}
 //			if(Util.getHumpName(co.getName()).equalsIgnoreCase("id")||
 //					Util.getHumpName(co.getName()).equalsIgnoreCase("gmtCreated")||

@@ -4,6 +4,8 @@ import org.dy.common.orm.mysql.mybatis.base.BuildFactory;
 import org.dy.common.orm.mysql.mybatis.bean.TableWapper;
 import org.dy.common.orm.mysql.mybatis.build.*;
 import org.dy.common.orm.mysql.mybatis.enums.OutPathKey;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -43,6 +45,18 @@ public class Mybatisorm {
 		builder.setDaoPackage("com.dy.mapper");//dao包地址
 		builder.setServicePackage("com.dy.service");
 		builder.setServiceImplPackage("com.dy.service.impl");
+		File path_file = new File(PROJECT_PATH);
+		if (!path_file.isDirectory()){
+			path_file.mkdir();
+			File model = new File(path_file, "model");
+			model.mkdir();
+			File mapper = new File(path_file, "mapper");
+			mapper.mkdir();
+			File service = new File(path_file, "service");
+			service.mkdir();
+			File impl = new File(service, "impl");
+			impl.mkdir();
+		}
 		outPathMap.put(OutPathKey.DEFULT,PROJECT_PATH);
 		outPathMap.put(OutPathKey.DO,PROJECT_PATH + "\\model\\");
 		outPathMap.put(OutPathKey.DAO,PROJECT_PATH + "\\mapper\\");

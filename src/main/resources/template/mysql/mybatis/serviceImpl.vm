@@ -33,7 +33,7 @@ public class ${bigServiceImplName} extends BaseServiceImpl implements ${bigServi
     * @return ResultModel
     */
     @Override
-    public ResultModel<PageRequest<${bigDoName}>> query${bigDoName}ListForPage(${bigDoName} ${minDoName}, PageRequest<${bigDoName}> pageRequest) throws Exception{
+    ResultModel<PageRequest<${bigDoName}>> query${bigDoName}ListForPage(${bigDoName} ${minDoName}, PageRequest<${bigDoName}> pageRequest) throws Exception{
         try {
 
             Assert.notNull(pageRequest, "分页参数不能为空");
@@ -59,7 +59,7 @@ public class ${bigServiceImplName} extends BaseServiceImpl implements ${bigServi
     * @return ResultModel
     */
     @Override
-    public ResultModel<${bigDoName}> selectByParams(${bigDoName} ${minDoName}){
+    ResultModel<${bigDoName}> selectByParams(${bigDoName} ${minDoName}){
         try {
             Assert.isTrue(id != null,"查询Id不能为空!");
             ${bigDoName} ${minDoName} = ${minDaoName}.selectByParams(${minDoName});
@@ -82,7 +82,7 @@ public class ${bigServiceImplName} extends BaseServiceImpl implements ${bigServi
     * @return ResultModel
     */
     @Override
-    public ResultModel<${bigDoName}> add${bigDoName}(${bigDoName} ${minDoName}){
+    ResultModel<${bigDoName}> add${bigDoName}(${bigDoName} ${minDoName}){
         try {
             // Validate
             validateForAdd(${minDoName});
@@ -118,7 +118,7 @@ public class ${bigServiceImplName} extends BaseServiceImpl implements ${bigServi
     * @return ResultModel
     */
     @Override
-    public ResultModel<${bigDoName}> modify${bigDoName}(${bigDoName} ${minDoName}){
+    ResultModel<${bigDoName}> modify${bigDoName}(${bigDoName} ${minDoName}){
         try {
 
             // validate

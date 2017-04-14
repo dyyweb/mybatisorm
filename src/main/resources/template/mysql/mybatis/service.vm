@@ -20,27 +20,27 @@ public interface ${bigServiceName} {
 	* @param pageRequest PageRequest<${bigDoName}>
 	* @return ResultModel<PageRequest<${bigDoName}>>
     */
-    public ResultModel<PageRequest<${bigDoName}>> query${bigDoName}ListForPage(${bigDoName} ${minDoName}, PageRequest<${bigDoName}> pageRequest) throws Exception;
+    ResultModel<PageRequest<${bigDoName}>> query${bigDoName}ListForPage(${bigDoName} ${minDoName}, PageRequest<${bigDoName}> pageRequest) throws Exception;
 
     /**
     * 根据参数查询
     * @param id ${idType}
     * @return ResultModel<${bigDoName}>
     */
-    public ResultModel<${bigDoName}> selectByParams(${bigDoName} ${minDoName});
+    ResultModel<${bigDoName}> selectByParams(${bigDoName} ${minDoName});
 
     /**
     * 添加
     * @param ${minDoName} ${bigDoName}
     * @return ResultModel<${bigDoName}>
     */
-    public ResultModel<${bigDoName}> add${bigDoName}(${bigDoName} ${minDoName});
+    ResultModel<${bigDoName}> add${bigDoName}(${bigDoName} ${minDoName});
 
     /**
     * 修改
     * @param ${minDoName} ${bigDoName}
 	* @return ResultModel<${bigDoName}>
     */
-    public ResultModel<${bigDoName}> modify${bigDoName}(${bigDoName} ${minDoName});
+    ResultModel<${bigDoName}> modify${bigDoName}(${bigDoName} ${minDoName});
 
 }

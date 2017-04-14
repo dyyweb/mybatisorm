@@ -26,10 +26,24 @@ $!{xmlBo.columnName}
 
     <!--多条件查询表信息(分页) -->
     <select id="selectListByParams" parameterType="${tableName}DO" resultMap="${tableName}Map">
-        SELECT <include refid="allSelectionColumn"/> FROM ${table_name}
+        SELECT <include refid="allSelectionColumn"/> FROM ${table_name} WHERE 1=1
+         #foreach($xmlBo in ${list})#if(($velocityCount)==$!{list.size()})<if test="$!{xmlBo.propertyName} != null #if($!{xmlBo.type} == "STRING")and $!{xmlBo.propertyName} != ''#end">
+                    AND $!xmlBo.columnName = #{$!{xmlBo.propertyName}}
+                </if>
+                #else<if test="$!{xmlBo.propertyName} != null #if($!{xmlBo.type} == "STRING")and $!{xmlBo.propertyName} != ''#end">
+                    AND $!xmlBo.columnName = #{$!{xmlBo.propertyName}}
+                </if>
+                #end#end
     </select>
     <select id="selectCountByParams" parameterType="${tableName}DO" resultType="int">
-        SELECT COUNT(id) FROM ${table_name}
+        SELECT COUNT(id) FROM ${table_name} WHERE 1=1
+        #foreach($xmlBo in ${list})#if(($velocityCount)==$!{list.size()})<if test="$!{xmlBo.propertyName} != null #if($!{xmlBo.type} == "STRING")and $!{xmlBo.propertyName} != ''#end">
+                            AND $!xmlBo.columnName = #{$!{xmlBo.propertyName}}
+                        </if>
+                        #else<if test="$!{xmlBo.propertyName} != null #if($!{xmlBo.type} == "STRING")and $!{xmlBo.propertyName} != ''#end">
+                            AND $!xmlBo.columnName = #{$!{xmlBo.propertyName}}
+                        </if>
+                        #end#end
     </select>
 
     <!-- 添加数据 -->

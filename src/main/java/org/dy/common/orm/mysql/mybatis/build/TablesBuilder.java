@@ -1,4 +1,4 @@
-package org.dy.common.orm.mysql.mybatis;
+package org.dy.common.orm.mysql.mybatis.build;
 
 import lombok.Getter;
 import lombok.Setter;
