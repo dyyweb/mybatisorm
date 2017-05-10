@@ -5,7 +5,7 @@
 
 <mapper namespace="${daoPackage}.${tableName}Mapper" >
 	 #*
-	 <resultMap id="${tableName}Map" type="${tableName}DO">
+	 <resultMap id="${tableName}Map" type="${tableName}">
         #foreach($xmlBo in ${list})
         <result property="$!{xmlBo.propertyName}" column="$!{xmlBo.columnName}"/>
         #end
@@ -25,7 +25,7 @@ $!{xmlBo.columnName}
     </select>
 
     <!--多条件查询表信息(分页) -->
-    <select id="selectListByParams" parameterType="${tableName}DO" resultMap="${tableName}Map">
+    <select id="selectListByParams" parameterType="${tableName}" resultMap="${tableName}Map">
         SELECT <include refid="allSelectionColumn"/> FROM ${table_name} WHERE 1=1
          #foreach($xmlBo in ${list})#if(($velocityCount)==$!{list.size()})<if test="$!{xmlBo.propertyName} != null #if($!{xmlBo.type} == "STRING")and $!{xmlBo.propertyName} != ''#end">
                     AND $!xmlBo.columnName = #{$!{xmlBo.propertyName}}
@@ -38,7 +38,7 @@ $!{xmlBo.columnName}
                     limit ${startRow},${rowNum}
                 </if
     </select>
-    <select id="selectCountByParams" parameterType="${tableName}DO" resultType="int">
+    <select id="selectCountByParams" parameterType="${tableName}" resultType="int">
         SELECT COUNT(id) FROM ${table_name} WHERE 1=1
         #foreach($xmlBo in ${list})#if(($velocityCount)==$!{list.size()})<if test="$!{xmlBo.propertyName} != null #if($!{xmlBo.type} == "STRING")and $!{xmlBo.propertyName} != ''#end">
                             AND $!xmlBo.columnName = #{$!{xmlBo.propertyName}}
@@ -50,7 +50,7 @@ $!{xmlBo.columnName}
     </select>
 
     <!-- 添加数据 -->
-    <insert id="insert" parameterType="${tableName}DO">
+    <insert id="insert" parameterType="${tableName}">
 #if(${idType} != 'String')
         <selectKey resultType="${idType}" order="AFTER" keyProperty="id">
         SELECT LAST_INSERT_ID() AS id
@@ -70,7 +70,7 @@ $!xmlBo.columnName
     </insert>
 
     <!-- 根据ID更新信息-->
-    <update id="updateById" parameterType="${tableName}DO">
+    <update id="updateById" parameterType="${tableName}">
         UPDATE ${table_name} SET
         #foreach($xmlBo in ${list})#if(($velocityCount)==$!{list.size()})<if test="$!{xmlBo.propertyName} != null #if($!{xmlBo.type} == "STRING")and $!{xmlBo.propertyName} != ''#end">
             $!xmlBo.columnName = #{$!{xmlBo.propertyName}}

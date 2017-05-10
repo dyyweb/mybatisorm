@@ -45,11 +45,11 @@ public class Mybatisorm {
 		builder.setUrl("jdbc:mysql://10.7.13.48:8066/account?useUnicode=true&amp;characterEncoding=utf-8");//数据库链接
 		builder.setName("admin");//数据库用户名
 		builder.setPwd("9MeRMf7b15SvsjLpQFtB");//数据库密码
-		TablesBuilder.BASEPACKAGE = "com.dy.base";//base包地址
-		builder.setPojoPackage("com.dy.model");//pojo包地址
-		builder.setDaoPackage("com.dy.mapper");//dao包地址
-		builder.setServicePackage("com.dy.service");
-		builder.setServiceImplPackage("com.dy.service.impl");
+		TablesBuilder.BASEPACKAGE = "base";//base包地址
+		builder.setPojoPackage("domain");//pojo包地址
+		builder.setDaoPackage("mapper");//dao包地址
+		builder.setServicePackage("service");
+		builder.setServiceImplPackage(".service.impl");
 		File path_file = new File(PROJECT_PATH);
 		if (!path_file.isDirectory()){
 			path_file.mkdir();
